@@ -12,7 +12,7 @@ Running this project requires [Node.js](https://nodejs.org/en/) 14.x or greater,
 1. Start the app with `npm start`. Any changes you make will be automatically updated.
 1. Visit <http://localhost:3000/jsx> to view site
 
-#### Points Address in this submission
+### Points Address in this submission
 
 ##### 1. Test
 
