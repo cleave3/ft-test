@@ -1,0 +1,94 @@
+@import "@financial-times/o-colors/main";
+@import "@financial-times/o-grid/main";
+
+// output all o-grid css
+@include oGrid();
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: oColorsByUsecase("page", "background");
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.site-title {
+    font-size: clamp(24px, 3vw, 40px);
+}
+
+.error {
+    color: #ff767c;
+    font-size: 14px;
+}
+
+.stats-section {
+    background-color: #262a33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 10px;
+}
+
+.asset-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.asset-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.asset-name {
+    margin-right: 5px;
+}
+
+.asset-change-value {
+    border-radius: 3px;
+    padding: 0 4px;
+    vertical-align: middle;
+}
+.change-up {
+    border: 1px solid #9cd321;
+    color: #9cd321;
+}
+
+.change-down {
+    border: 1px solid #ff767c;
+    color: #ff767c;
+}
+
+// @media (min-width: 61.25em) {
+//     .asset-container {
+//         width: 80%;
+//     }
+// }
+
+// @media (min-width: 70em) {
+//     .asset-container {
+//         width: 60%;
+//     }
+// }
+
+@media (max-width: 767px) {
+    .asset-item:nth-last-child(1) {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .asset-item:nth-last-child(2) {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .asset-item:nth-last-child(3) {
+        display: none;
+    }
+}
