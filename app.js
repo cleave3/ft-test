@@ -14,6 +14,7 @@ app.engine("handlebars", engine({ layoutsDir: path.join(app.settings.views, "han
 app.set("view engine", "handlebars");
 app.set("views", "./views");
 app.use("/dist", express.static(path.join(__dirname, "dist")));
+// app routes
 app.use(router);
 
 if (process.env.NODE_ENV !== "test") {

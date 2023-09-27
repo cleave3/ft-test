@@ -1,6 +1,5 @@
 const { Router } = require("express");
-const { loadJsxHomeScreen } = require("../handlers/jsxHandler");
-const { loadHandlebarsHomeScreen } = require("../handlers/handleBarsHandler");
+const { loadJsxHomeScreen, loadHandlebarsHomeScreen } = require("../handlers");
 
 const router = Router();
 
