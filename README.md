@@ -16,10 +16,12 @@ Running this project requires [Node.js](https://nodejs.org/en/) 14.x or greater,
 
 ##### 1. Test
 
-Added 2 test:
+Added 4 test:
 
 - Test Asset component render. <a href="./test/Asset.spec.js">Asset.spec.js</a>
-- Test for jsx render
+- Asset component test for conditional renders
+- Endpoint test `/jsx` for correct statusCode. <a href="./test/app.spec.js">app.spec.js</a>
+- Endpoint test for jsx render and correct text-content
 
 #### 2. Error Handling
 

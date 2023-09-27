@@ -10,3 +10,6 @@ export const ASSET_NAME_MAP = {
     "IB.1:IEU": "Brent Crude Oil",
     GBPUSD: "Pound/Dollar",
 };
+
+export const ASSET_URL =
+    "https://markets-data-api-proxy.ft.com/research/webservices/securities/v1/quotes?symbols=FTSE:FSI,INX:IOM,EURUSD,GBPUSD,IB.1:IEU";

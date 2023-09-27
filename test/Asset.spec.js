@@ -3,7 +3,7 @@
  */
 
 import { cleanup, render } from "@testing-library/react";
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 import Asset from "../views/jsx/Components/Asset";
 import { ASSET_NAME_MAP, formatCurrency } from "../utils";
 
@@ -32,12 +32,46 @@ const DATA = {
     },
 };
 
+const DATA2 = {
+    symbolInput: "GBPUSD",
+    basic: {
+        symbol: "GBPUSD",
+        name: "UK Pound Sterling/US Dollar FX Spot Rate",
+        exchange: "SOURCE IS A THOMSON REUTERS CONTRIBUTOR",
+        exhangeCode: "RCT",
+        bridgeExchangeCode: "CUX",
+    },
+    quote: {
+        lastPrice: 1.2186000000000001,
+        openPrice: 1.2207000000000001,
+        high: 1.2215,
+        low: 1.2168,
+        closePrice: 1.2211,
+        previousClosePrice: 1.2211,
+        change1Day: -0.0024999999999999467,
+        change1DayPercent: -0.20473343706493707,
+        change1Week: -0.020599999999999952,
+        change1WeekPercent: -1.6623628147191696,
+        ask: 1.219,
+        bid: 1.2186000000000001,
+        timeStamp: "2023-09-26T08:39:00",
+        volume: 0.0,
+    },
+};
+
 afterEach(cleanup);
 
 test("it renders Asset component to render correctly", () => {
-    const { getByText } = render(<Asset data={DATA} />);
+    const { getByText, container } = render(<Asset data={DATA} />);
 
     expect(getByText(ASSET_NAME_MAP[DATA.symbolInput])).toBeInTheDocument();
     expect(getByText(`+${formatCurrency(DATA.quote.change1DayPercent)}%`)).toBeInTheDocument();
+    expect(container?.firstChild?.lastChild?.classList.contains("change-up")).toBeTruthy();
 });
 
+test("The span containing the change1DayPercent value should contain the change-down className when change1DayPercent value is negative", () => {
+    const { container } = render(<Asset data={DATA2} />);
+
+    expect(container?.firstChild?.lastChild?.classList.contains("change-up")).toBeFalsy();
+    expect(container?.firstChild?.lastChild?.classList.contains("change-down")).toBeTruthy();
+});
