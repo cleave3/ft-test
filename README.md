@@ -20,7 +20,7 @@ Added 4 test:
 
 - Test Asset component render. <a href="./test/Asset.spec.js">Asset.spec.js</a>
 - Asset component test for conditional renders
-- Endpoint test `/jsx` for correct statusCode. <a href="./test/app.spec.js">app.spec.js</a>
+- Endpoint test `/jsx` for correct statusCode. <a href="./src/css/styles.scss">app.spec.js</a>
 - Endpoint test for jsx render and correct text-content
 
 #### 2. Error Handling
@@ -37,7 +37,9 @@ Only pure JSX was used without additional client-side libraries
 
 #### 5. Use Origami Components
 
-`@financial-times/o-colors` was installed and used in project.
+`@financial-times/o-colors` and `@financial-times/o-grid` were installed as `peerDependencies` and used in the project.
+
+<a href="./src/css/styles.scss">styles.scss</a>
 
 ```scss
 @import "@financial-times/o-colors/main";
@@ -49,7 +51,9 @@ body {
 }
 ```
 
-// o-grid-container used to center items just like on ft.com
+`o-grid-container` used to center items just like on ft.com
+
+<a href="./views/jsx/Components/Home.jsx">Home.jsx</a>
 
 ```jsx
 <div className="asset-container o-grid-container"> 
